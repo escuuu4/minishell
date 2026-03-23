@@ -1,0 +1,62 @@
+# Basic commands
+ls
+echo hello world
+pwd
+date
+
+# Pipeline
+ls | wc -l
+ls | grep main
+cat /etc/passwd | grep root | wc -l
+
+# Input/output redirection
+ls > output.txt
+cat output.txt
+echo "test" > file.txt
+cat < file.txt
+ls > out.txt 2>& errors.txt
+
+# Built-in: cd
+cd /tmp
+cd
+cd /etc
+
+# Built-in: umask
+umask
+umask 022
+umask 077
+
+# Built-in: set (environment variables)
+set
+set HOME
+set MYVAR hello world
+set MYVAR
+
+# Built-in: limit
+limit
+limit nofile
+limit nofile 64
+limit stack
+
+# Environment variable expansion
+echo $HOME
+echo $USER
+echo $status
+echo $mypid
+
+# Tilde expansion
+echo ~
+cd ~
+ls ~
+
+# Wildcard expansion (?)
+ls *.?
+echo file?.txt
+
+# Background execution
+sleep 5 &
+echo $bgpid
+
+# Signal handling (Ctrl+C does not kill the shell)
+sleep 100 &
+echo $bgpid
